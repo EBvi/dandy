@@ -14,7 +14,7 @@ OSX 10.9에서 돌아가는 것을 정상 확인하였습니다. 10.8 이하에�
 터미널에서 아래 명령어를 입력합니다.
 
 ```sh
-curl https://raw.github.com/EBvi/dandy/master/bin/install.sh | sh
+curl https://raw.githubusercontent.com/EBvi/dandy/master/bin/install.sh | sh
 ```
 
 ## 삭제
@@ -22,7 +22,8 @@ curl https://raw.github.com/EBvi/dandy/master/bin/install.sh | sh
 터미널에서 아래 명령어를 입력합니다.
 
 ```sh
-curl https://raw.github.com/EBvi/dandy/master/bin/uninstall.sh | sh
+curl https://raw.githubusercontent.com/EBvi/dandy/master/bin/uninstall.sh | sh
+
 ```
 
 ## 사용법
