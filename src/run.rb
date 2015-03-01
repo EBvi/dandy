@@ -14,7 +14,7 @@ query = File.read query_file
 File.delete query_file
 
 # 부산대 맞춤법/문법 검사기 접속
-uri = URI.parse 'http://speller.cs.pusan.ac.kr/PnuSpellerISAPI_201408/lib/check.asp'
+uri = URI.parse File.read File.join home_dir, 'uri.txt'
 
 http = Net::HTTP.new uri.host, uri.port
 
@@ -32,6 +32,14 @@ begin
     end
 rescue => e
     source = e.message
+
+    # 오프라인일 수도 있고 한국어 맞춤법 주소가 변경되었을 수도 있다
+    uri = `curl --silent https://raw.githubusercontent.com/EBvi/dandy/master/src/uri.txt`
+    if uri =~ /^http.*/im
+        File.open((File.join home_dir, 'uri.txt'), 'w') do |file|
+            file.write uri
+        end
+    end
 end
 
 # 템플릿 파일 읽기

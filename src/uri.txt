@@ -1,0 +1,1 @@
+http://speller.cs.pusan.ac.kr/PnuSpellerISAPI_201408/lib/check.asp
