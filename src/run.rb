@@ -26,12 +26,12 @@ begin
 
     # 필요한 데이터만 뽑아 내기
     if response.body =~ /\s*<form id='formBugReport1'[^>]+>(.*)<\/form>/im
-        source = $1
+        source = ($1).force_encoding("utf-8")
     else
         source = "HTML 분석에 실패했습니다."
     end
 rescue => e
-    source = e
+    source = e.message
 end
 
 # 템플릿 파일 읽기
@@ -39,7 +39,7 @@ template_file = File.join home_dir, 'template.html'
 template = File.read template_file
 
 # 템플릿 채우기
-template.gsub! '{{source}}', source.force_encoding("utf-8")
+template.gsub! '{{source}}', source
 
 # 최종 결과 파일에 쓰기
 output_file = File.join home_dir, 'output.html'
