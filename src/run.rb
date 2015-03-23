@@ -11,7 +11,7 @@ query_file = File.join $home_dir, 'query.txt'
 query = File.read query_file
 
 # 임시로 사용한 선택 문장을 담은 파일 삭제
-# File.delete query_file
+File.delete query_file
 
 # 부산대 맞춤법/문법 검사기 접속
 uri = URI.parse File.read File.join $home_dir, 'uri.txt'
