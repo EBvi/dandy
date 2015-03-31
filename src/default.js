@@ -1,11 +1,11 @@
 var source  = document.getElementById('source');
-var count   = document.getElementById('correctionTableSize');
+var count   = document.querySelectorAll('.tableErrCorrect');
 var answers = document.querySelector('section');
 
 // correctionTableSize가 존재하면 파싱까지는 정상으로 본다.
 if (count) {
     // 문법 및 철자 오류가 있나?
-    if (parseInt(count.value)) {
+    if (parseInt(count.length)) {
         var table = source.querySelectorAll('.tableErrCorrect');
 
         [].slice.call(table).forEach(function(row) {
@@ -42,16 +42,3 @@ if (count) {
 
     answers.appendChild(p);
 }
-
-
-// var brs = document.querySelectorAll('h2 br');
-
-// Array.prototype.slice.call(brs).forEach(function(br) {
-//     if (br.nextSibling) {
-//         var delimiter = document.createElement('span');
-//         // delimiter.appendChild(document.createTextNode('&middot;'));
-//         delimiter.innerHTML = '&middot;';
-//         br.parentNode.insertBefore(delimiter, br);
-//     }
-//     br.parentNode.removeChild(br);
-// });
