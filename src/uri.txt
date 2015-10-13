@@ -1,1 +1,1 @@
-http://speller.cs.pusan.ac.kr/PnuSpellerISAPI_201503/lib/check.asp
+http://speller.cs.pusan.ac.kr/PnuSpellerISAPI_201504/lib/check.asp
